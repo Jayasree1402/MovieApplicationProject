@@ -1,0 +1,35 @@
+*{
+    font-family: sans-serif;
+}
+#container1{
+    margin-top: 12rem;
+    text-align: center;
+}
+#error1{
+    font-size: 4rem;
+    margin-top: 0px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+#error2{
+    font-size: 3rem;
+    color: wheat;
+    font-family: system-ui;
+    margin-bottom: 15px;
+}
+#error3{
+    color: white;
+    font-weight: 500;
+    font-family: system-ui;
+    margin: 15px 0;
+}
+a{
+    text-decoration: none;
+}
+#container2{
+    text-align: center;
+    margin-bottom: 11rem;
+}
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: crimson}

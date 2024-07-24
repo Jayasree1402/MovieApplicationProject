@@ -1,0 +1,95 @@
+    <div id="carouselExampleIndicators" class="carousel slide " [attr.data-ride]="'carousel'">
+      <div class="carousel-indicators">
+        <button
+          *ngFor="let movie of movies; let i = index"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          [attr.data-bs-slide-to]="i"
+          [class.active]="i === 0"></button>
+        
+      </div>
+      <div class="carousel-inner">
+        <div *ngFor="let movie of movies; let i = index" class="carousel-item" [class.active]="i === 0">
+          <div class="section-container-items">
+            <div class="container">
+             <div class="row align-items-center h-100" >
+               <div class="alta col-md-6  d-flex justify-content-lg-end align-items-center h-100">
+                   <span class="alta-title">Find Yours</span>
+                   <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" id="carousel-img"  alt="...">
+                   </div>
+
+
+                   <div class="section col-md-6 my-2">
+                    <h1>{{movie.original_title}}</h1>
+                    <h3>{{movie.overview}}</h3>
+                    <a [routerLink]="['/movie-view', movie.id]">
+                      <button>view details </button>
+                      </a>
+                </div>
+               </div>
+             </div>
+        </div>
+          </div>
+    </div>
+      </div>
+
+   
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  
+  <app-search></app-search>
+  
+  
+  
+  
+    <h2>Recommented Movies</h2>
+
+  <div class="movie-container" style="width:100%;overflow: auto;">
+    <div class="container-fluid" style="display:flex;width: 450%;">
+<!--    
+      <div class="wrapper"> -->
+        <div class="single-card"  *ngFor="let movie of movies">
+          <div class="img-area">
+                        <img mat-card-image src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="image poster">
+                      <div class="overlay"> 
+                        <div *ngIf="isLoggedIn"> <button class="add-to-cart" (click)="addFavorite(movie)"> 
+                          <mat-icon id="like">favorite</mat-icon></button></div>  
+                          
+                          <div *ngIf="!isLoggedIn"> 
+                            <a [routerLink]="['/login']"><button class="add-to-cart" > <mat-icon id="like">favorite</mat-icon> </button>
+                              </a>
+                              
+                          </div>  
+                          
+                        <a [routerLink]="['/movie-view', movie.id]">
+                          <button class="view-details"></button>
+                          </a>
+                      </div>
+           </div>
+                    <div class="info d-flex">
+                      <h3>{{movie.vote_average}}</h3>
+                       <mat-icon id="star" class="price">star</mat-icon>                      
+                     </div>
+                     
+            </div>
+             <!-- </div> -->
+        </div>
+      </div>
+
+
+<app-top-rated></app-top-rated>
+<app-upcoming-movies>
+</app-upcoming-movies>
+<app-tv></app-tv>
+
+<app-footer></app-footer> 
+
+
+

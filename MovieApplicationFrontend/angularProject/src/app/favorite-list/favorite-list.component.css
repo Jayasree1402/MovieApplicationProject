@@ -1,0 +1,243 @@
+  
+  h2{
+    color:whitesmoke;
+    margin: 20px ;
+  }
+  img {
+      height: 250px; 
+      width: 200px;
+    }
+    .example-card
+    {
+     background-color: blanchedalmond;
+      box-shadow: 2px 2px 10px black;
+     
+    }
+  
+   
+  .movie-info
+  {
+      display: inline-flex;
+      color: black;
+  }
+
+  
+  #delete
+  {
+      color: black;
+      background-color: crimson;
+    
+  }
+
+    .card {
+      margin-right: 35px ; 
+      margin-bottom: 30px;
+      display: inline-flex;
+      margin-left: 20px;
+    }
+    #movie-card
+  {
+    margin: 0 20px; 
+  }
+  
+    .button {
+      background-color:transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      
+    }
+  
+    *{
+        font-family: sans-serif;
+    }
+    #container1{
+        margin-top: 10rem;
+        text-align: center;
+    }
+    #error1{
+        font-size: 4rem;
+        margin-top: 0px;
+        color: white;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+    #error2{
+        font-size: 3rem;
+        color: wheat;
+        font-family: system-ui;
+        margin-bottom: 25px;
+    }
+    #error3{
+        color: white;
+        font-weight: 500;
+        font-family: system-ui;
+        margin: 15px 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    #container2{
+        text-align: center;
+        margin-bottom: 11rem;
+    }
+    .mat-mdc-raised-button.mat-primary {
+        --mdc-protected-button-container-color: crimson}
+
+
+.movie-container{
+margin-top: 30px;
+}
+     
+        
+        
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    overflow: hidden;
+  }
+  
+  .single-card {
+    position: relative;
+    width: 300px;
+    height: 350px;  
+
+    margin: 5px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    background: #414852;
+    border-radius: 1px;
+    transition: all 0.8s ease-in-out;
+  }
+  .single-card:hover {
+    transform: translateY(-10px);
+  }
+  .img-area {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .single-card:hover .img-area img {
+    transform: scale(1.1);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .single-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .add-to-cart,
+  .view-details {
+    background-color:transparent;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .mat-icon{
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    color:pink;
+    }
+  /* #add-to-cart{
+    background-color: #fff;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+  } */
+  
+  
+  
+  
+  
+  .single-card:hover .overlay 
+  .add-to-cart,
+  .single-card:hover .overlay .view-details {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* #add-to-cart{
+    opacity: 1;
+    transform: translateY(0);
+  } */
+  
+  .add-to-cart:hover,
+  .view-details:hover {
+    /* background-color: orangered;
+    color: #fff; */
+    border: none;
+  }
+  /* #add-to-cart:hover{
+    background-color: orangered;
+    font-size: 10px;
+    color: #fff;
+    border-color: black;
+  
+  } */
+  
+  .info {
+    padding: 1px;
+    text-align: left;
+    color: #ddd;
+    overflow-y: auto; /* Add overflow-y: auto for a vertical scrollbar when content exceeds the height */
+    max-height: 150px; /* Set max-height for the container */
+   
+  
+  }
+  
+  .info h3 {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .info .price {
+    font-size: 20px; 
+    font-weight: bold;
+    color: aqua;
+  }
+  
+  

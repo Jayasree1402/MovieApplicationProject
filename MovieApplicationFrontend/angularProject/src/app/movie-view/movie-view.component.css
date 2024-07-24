@@ -1,0 +1,22 @@
+img{
+    width: 300px;
+    
+}
+
+.container{
+    display: flex;
+    margin: 4%;
+}
+.movie-info
+{
+    color: antiquewhite;
+    margin-left: 5%;
+    font-weight: 300;
+}
+p{
+    font-size: 15px;
+    letter-spacing:1px;
+    font-weight: 400;
+}
+
+

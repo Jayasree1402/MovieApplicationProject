@@ -1,0 +1,36 @@
+
+
+  <div class='search-section'>
+   
+    <div class="head-content">
+      <input type="text" [(ngModel)]="title" placeholder="MovieTitle" class="form-control" />
+      <button (click)="getMovie(title)" class="btn btn-danger">SEARCH</button></div>
+
+  <div class="movie-container" style="width:100%;overflow: auto;">
+    <div class="container-fluid" style="display:flex;width: 450%;">
+     
+    
+    <section class="d-flex flex-wrap">
+      <div class="wrapper ">
+        <div class="single-card"  *ngFor="let movie of movies">
+          <div class="img-area">
+                        <img mat-card-image src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="image poster">
+                      <div class="overlay">                        
+                        <button class="add-to-cart">
+                        <mat-icon >favorite</mat-icon></button>
+                        <a [routerLink]="['/movie-view', movie.id]">
+                          <button class="view-details"></button>
+                          </a>
+                      </div>
+           </div>
+                    <div class="info d-flex">
+                      <h3>{{movie.vote_average}}</h3>
+                       <mat-icon id="star" class="price">star</mat-icon> 
+                     </div>
+                     
+            </div>
+             </div>
+    </section>
+        </div>
+        
+      

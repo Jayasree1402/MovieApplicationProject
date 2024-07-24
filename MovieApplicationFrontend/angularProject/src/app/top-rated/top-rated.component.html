@@ -1,0 +1,68 @@
+<!-- 
+
+
+<div class="movie-container" style="width:100%;overflow: auto;">
+  <div class="container-fluid" style="display:flex;width: 450%;">
+    <div id="movie-card">
+      <div class="card"  *ngFor="let movie of movies">
+        <mat-card class="example-card">
+         
+          <mat-card-header>
+            <a [routerLink]="['/movie-view', movie.id]">
+              <img mat-card-image src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="image poster">
+            </a>
+          </mat-card-header>
+  
+          <mat-card-content class="movie-info">
+           
+            <mat-card-title>{{movie.vote_average}}</mat-card-title>
+            <mat-icon id="star">star</mat-icon>
+           
+          </mat-card-content>
+         
+          <mat-card-actions > 
+            <button (click)="addFavorite(movie)" mat-button class="btn mx-2" id="favorite">
+              Add to Favorites</button>
+           
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<h2>Top Rated Movies</h2>
+<div class="movie-container" style="width:100%;overflow: auto;">
+  <div class="container-fluid" style="display:flex;width: 450%;">
+ 
+    <!-- <div class="wrapper "> -->
+      <div class="single-card"  *ngFor="let movie of movies">
+        <div class="img-area">
+                 <a [routerLink]="['/movie-view', movie.id]">
+                      <img mat-card-image src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="image poster">
+                    </a>
+                    <div class="overlay">                        
+                      <div *ngIf="isLoggedIn"> <button class="add-to-cart" (click)="addFavorite(movie)"> 
+                        <mat-icon id="like">favorite</mat-icon></button></div>  
+                        
+                        <div *ngIf="!isLoggedIn"> 
+                          <a [routerLink]="['/login']"><button class="add-to-cart" > <mat-icon id="like">favorite</mat-icon> </button>
+                            </a>
+                            
+                        </div>  
+                      <a [routerLink]="['/movie-view', movie.id]">
+                        <button class="view-details"></button>
+                        </a>
+                    </div>
+         </div>
+                  <div class="info d-flex">
+                    <h3>{{movie.vote_average}}</h3>
+                    <mat-icon id="star" class="price">star</mat-icon> 
+                   </div>
+                   
+          </div>
+           <!-- </div> -->
+      </div>
+      </div>
+

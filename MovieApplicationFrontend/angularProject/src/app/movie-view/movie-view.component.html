@@ -1,0 +1,22 @@
+
+<div class="container">
+
+    <img src="https://image.tmdb.org/t/p/original{{movieDetail.poster_path}}" alt="image poster">
+    
+
+    <div class="movie-info">
+   
+    <h2>Movie Title : {{movieDetail?.original_title}}</h2>
+    <h2>Rating : {{movieDetail?.vote_average}}</h2>
+    <h2>Overview : </h2>
+    <p>{{movieDetail?.overview}}</p>           
+        <h2>Released On : {{movieDetail?.release_date}}</h2>
+        <h2>Tagline : {{movieDetail?.tagline}}</h2>
+        <!-- <app-video-player></app-video-player> -->
+        <div >
+          <app-video-player></app-video-player>
+
+        </div>
+</div>
+
+</div>

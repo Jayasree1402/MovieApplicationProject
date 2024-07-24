@@ -1,0 +1,104 @@
+<div *ngIf="login" class="login-form">
+  <mat-card class="card">
+    <mat-card-header class="login">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+        <mat-form-field appearance="fill" id="emailinput" >
+          <input matInput placeholder="email" type="email" name="email" [(ngModel)]="email" required email>
+          <mat-error *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+          <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required minlength="8">
+          <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+            Password must be at least 8 characters long.
+          </mat-error>
+
+</mat-form-field>
+<br>
+<br>
+
+<button mat-raised-button id="login" type="submit" [disabled]="loginForm.invalid" >Login</button>
+
+</form>
+</mat-card-content>
+<div >
+<div >
+<div class="text-center " id="para">
+  <h4 id="para">
+      Don`t have an account ?<button class="btn btn-danger"  (click)="togglePage()" id="sign-up-button">sign-up</button> here.
+  </h4>
+</div>
+</div>
+</div>
+</mat-card>
+
+</div>
+
+
+
+
+<div *ngIf="!login" class="login-form">
+  <mat-card class="card">
+  <mat-card-header class="login">
+  <mat-card-title>Sign-In</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+  <form #loginForm="ngForm" (ngSubmit)="registerUser();loginForm.reset()" enctype="multipart/form-data">
+    <mat-form-field appearance="fill" >
+      <input matInput placeholder="username" type="text" name="username" [(ngModel)]="username" required username>
+      <mat-error *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+        userName is required
+      </mat-error>
+    </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="email" type="email" name="email" [(ngModel)]="email" required email>
+    <mat-error *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+      Please enter a valid email.
+    </mat-error>
+  </mat-form-field>
+   <mat-form-field  >
+    <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required minlength="8">
+    <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+      Password must be at least 8 characters long.
+    </mat-error>
+  </mat-form-field>
+
+<!-- 
+<mat-form-field  >
+  <input matInput type="password" placeholder="confirmPassword" id="confirmPassword" type="password" name="confirmPassword" [(ngModel)]="confirmPassword" required password>
+  <mat-error *ngIf="loginForm.submitted && !passwordsMatch()">
+    Password Must be same
+  </mat-error>
+ 
+</mat-form-field> -->
+
+
+
+  <br><br>
+    <div class="div">
+      <input  type="file" id="image" name="image" (change)="onFileChange($event)" [(ngModel)]="image" accept="image/*"  required>
+    </div>
+    <br>
+    <!-- <input type="reset" value="Reset">   -->
+  <button mat-raised-button id="login" type="submit" [disabled]="loginForm.invalid" >Register</button>
+  </form>
+  </mat-card-content>
+ 
+  <div >
+  <div >
+  <div class="text-center " id="para">
+    <h4 id="para">
+      Already have account<button class="btn btn-danger"   (click)="togglePage()" id="sign-up-button">sign-in</button> here.
+    </h4>
+  </div>
+  </div>
+  </div>
+  </mat-card>
+  </div>
+
+

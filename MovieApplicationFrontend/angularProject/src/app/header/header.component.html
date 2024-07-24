@@ -1,0 +1,90 @@
+
+  <nav class="navbar navbar-expand-lg  navbar-light  fixed-top">
+      <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+      <div class="b-example-divider container-fluid">
+        <div class="p-3 bg-transparent text-white">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/" class="d-flex col-8 align-items-center mb-2 mb-lg-0 mx-4 text-white text-decoration-none">
+                <img src="../../assets/MOVIE.png" class="bi me-2" width="70" height="70" role="img" aria-label="Bootstrap" />
+              </a>
+      
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li>
+                 
+                    <button matTooltip="Home" [routerLink]="['/']"  class="btn btn-outline-light me-4 " id="home-icon">Home</button>
+                </li>
+                <!-- <li>
+                  <a matTooltip="My List" [routerLink]="['favorite-list']"  class="nav-link px-2 mx-2 " id="home-icon">
+                    My Favorite List  
+                    </a>
+                </li> -->
+
+                <div class="text-end">
+                  <button *ngIf="!isLoggedIn()" type="button" class="btn btn-outline-light me-4" matTooltip="Login" [routerLink]="['login']" (click)="login()">
+                    My Favorite List
+                  </button>
+                  <button *ngIf="isLoggedIn()" type="button" class="btn btn-outline-light me-4 " [routerLink]="['favorite-list']">
+                    My Favorite List
+                  </button>
+                </div>
+
+
+                
+               
+                <!-- <div *ngIf="!isLoggedIn">
+                <li>
+                  <a matTooltip="login" [routerLink]="['login']"  class="nav-link px-2 mx-2 " id="home-icon">
+                    Login 
+                    </a>
+                </li>
+              </div>
+                 <div *ngIf="isLoggedIn">
+                <li>
+                  <a matTooltip="Logout" [routerLink]="['/']" id="log" (click)="logout()" class="nav-link px-2 mx-2 " id="home-icon">
+                   Logut
+                    </a>
+                </li>
+              </div> -->
+
+              <div class="text-end">
+                <button *ngIf="!isLoggedIn()" type="button" class="btn btn-outline-light me-4 " matTooltip="Login" [routerLink]="['login']" (click)="login()">
+                  LOGIN
+                </button>
+                <button *ngIf="isLoggedIn()" type="button" class="btn btn-outline-light me-4" (click)="logout()">
+                  Logout
+                </button>
+              </div>
+            
+             
+              
+             </ul>
+
+
+
+
+<!-- 
+             <div class="text-end">
+                <button type="button" class="btn btn-outline-light me-4 text-white" matTooltip="Login" [routerLink]="['login']">
+                  LOGIN
+                </button>              
+                <button type="button" class="btn btn-warning" id="logout"matTooltip="Logout"(click)="logout()" [routerLink]="['login']">
+                  LOGOUT
+                </button>
+              </div> -->
+            </div>
+
+            
+      
+      </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+  

@@ -1,0 +1,95 @@
+
+<div *ngIf="!movieExists" >
+  <div id="container1">
+      <p id="error1">Empty!!</p>
+  </div>
+  <div id="container2">
+      <h2 id="error2">Try to add movie</h2>
+      <!-- <p id="error3">The page you requested could not be found</p> -->
+      <div>
+          <button routerLink="/" mat-raised-button color="primary" >Click here</button>
+      </div> 
+  </div>
+</div>
+<!-- 
+<div class="container-fluid">
+    <div *ngIf="movieExists">
+        <div id="movie-card">
+            <div class="card"  *ngFor="let fav of fav_movies">
+              <mat-card class="example-card">
+               
+                <mat-card-header>
+                  <a [routerLink]="['/movie-view', fav.id]">
+                    <img mat-card-image src="https://image.tmdb.org/t/p/original{{fav.poster_path}}" alt="image poster">
+                  </a>
+                </mat-card-header>
+             
+                <mat-card-content class="movie-info">
+           
+                  <mat-card-title>{{fav.vote_average}}</mat-card-title>
+                 <mat-icon>star_outline</mat-icon>
+                  
+                </mat-card-content>
+                  <mat-card-actions > 
+                    
+                    <button (click)="removeMovie(fav)" mat-button class="btn mx-2" id="delete">
+                    Remove
+                    </button> 
+                   
+                  </mat-card-actions>
+              
+              
+              </mat-card>
+            </div>
+          </div>
+    </div>
+</div>
+ -->
+
+<div class="movie-container" style="width:100%;overflow: auto;">
+  <!-- <div class="container-fluid" style="display:flex;width: 450%;"> -->
+
+ <br>
+ <br>
+ <div *ngIf="movieExists">
+  <div class="wrapper ">
+      <div class="single-card" *ngFor="let fav of fav_movies">
+
+        <div class="img-area">
+                      <img mat-card-image src="https://image.tmdb.org/t/p/original{{fav.poster_path}}" alt="image poster">
+                    <div class="overlay">                        
+                        <button (click)="removeMovie(fav)" mat-button class="btn mx-2" id="delete">
+                          Remove
+                          </button> 
+                      <a [routerLink]="['/movie-view', fav.id]">
+                        <button class="view-details"></button>
+                        </a>
+                    </div>
+         </div>
+                  <!-- <div class="info d-flex">
+                     <mat-icon>star</mat-icon>                      
+                    <h3>{{fav.vote_average}}</h3> -->
+                   <!-- </div> -->
+                   
+          </div>
+           </div>
+</div>
+    
+      </div>
+<!--       </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

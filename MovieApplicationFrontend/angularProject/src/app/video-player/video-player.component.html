@@ -1,0 +1,17 @@
+<div *ngIf="isLoggedInForVideo()">
+    <button  class="btn btn-danger m-3" (click)="playVideo()" >Play Video</button>
+<div>
+    <youtube-player  *ngIf="isPlayerVisible"
+    [videoId]="currentVideoId"
+    [width]="600"
+    [height]="400"
+    (ready)="onPlayerReady($event)">
+
+    </youtube-player>
+</div>
+</div>
+
+
+<div *ngIf="!isLoggedInForVideo()" >
+   <button class="btn btn-danger" [routerLink]="['/login']">Please Login!</button>
+  </div>
